@@ -1,4 +1,11 @@
 // .query selector variables go here 👇
+var mainPoster = documentSelector('.main-poster')
+
+// var sample = documentSelector('sample')
+// var sample = documentSelector('sample')
+// var sample = documentSelector('sample')
+// var sample = documentSelector('sample')
+// var sample = documentSelector('sample')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -102,9 +109,25 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
+homePage.addEventListner('loud',loadPage)
 
 // functions and event handlers go here 👇
+function loadPage(){
+
+}
+
+// when butten is clicked randomly select picter/ postername / quote
+
+
 // (we've provided one for you to get you started)!
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+function getRandomIndex(titles) {
+  return Math.floor(Math.random() * titles.length);
+}
+
+function getRandomIndex(quotes) {
+  return Math.floor(Math.random() * quotes.length);
+}
+
+function getRandomIndex(images) {
+  return Math.floor(Math.random() * images.length);
 }
