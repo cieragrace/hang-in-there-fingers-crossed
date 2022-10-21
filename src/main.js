@@ -15,7 +15,10 @@ var takeMeBack = document.querySelector(".show-main");
 var posterQuoteInput = document.querySelector("#poster-quote");
 var posterTitleInput = document.querySelector("#poster-title");
 var imageUrlInput = document.querySelector("#poster-image-url");
-
+var savedPosterButton = document.querySelector(".show-saved")
+var savedPosterPage = document.querySelector(".saved-posters")
+var backToMainButton = document.querySelector(".back-to-main")
+// # is id and . is class
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -130,6 +133,8 @@ showFormButton.addEventListener('click', openFormPage)
 takeMeBack.addEventListener('click', openMainPage)
 showMyPosterButton.addEventListener('click', displayMyPoster)
 formCreatePoster.addEventListener('load', openFormPage)
+savedPosterButton.addEventListener('click', displaySavedPostersPage)
+backToMainButton.addEventListener('click', backToMainFromSaved)
 
 //functions and event handlers go here 👇
 //iteratrion 0
@@ -157,8 +162,20 @@ function openFormPage(){
     posterImage.src = imageUrlInput.value
     posterTitle.innerText = posterTitleInput.value
     posterQuote.innerText = posterQuoteInput.value
-
+    imageUrlInput.value = ""
+    posterTitleInput.value = ""
+    posterQuoteInput.value = ""
   }
+  function displaySavedPostersPage() {
+  hideMainPosterPage.classList.add('hidden')
+  savedPosterPage.classList.remove('hidden')
+  }
+
+  function backToMainFromSaved() {
+  savedPosterPage.classList.add('hidden')
+  hideMainPosterPage.classList.remove('hidden')
+  }
+
 // (we've provided one for you to get you started)!
 //function newRandomPoster() {
 
