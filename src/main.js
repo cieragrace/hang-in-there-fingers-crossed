@@ -16,9 +16,6 @@ var posterQuoteInput = document.querySelector("#poster-quote");
 var posterTitleInput = document.querySelector("#poster-title");
 var imageUrlInput = document.querySelector("#poster-image-url");
 
-
-
-
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -119,25 +116,24 @@ var quotes = [
 ];
 var savedPosters = [];
 var currentPoster;
-
+var imgIndex = getRandomIndex(images);
+var quoteIndex = getRandomIndex(quotes);
+var titleIndex = getRandomIndex(titles);
 // event listeners go here 👇
+
 //Iteration 0
 window.addEventListener('load', homePage)
 randomPosterButton.addEventListener('click', homePage)
+
 //Iteration 1
 showFormButton.addEventListener('click', openFormPage)
 takeMeBack.addEventListener('click', openMainPage)
 showMyPosterButton.addEventListener('click', displayMyPoster)
 formCreatePoster.addEventListener('load', openFormPage)
+
 //functions and event handlers go here 👇
-
-var imgIndex = getRandomIndex(images);
-var quoteIndex = getRandomIndex(quotes);
-var titleIndex = getRandomIndex(titles);
-
 //iteratrion 0
 function homePage() {
-
 posterImage.src = images[getRandomIndex(images)]
 posterTitle.innerText = titles[getRandomIndex(titles)]
 posterQuote.innerText = quotes[getRandomIndex(quotes)]
@@ -153,7 +149,7 @@ function openFormPage(){
     hideMainPosterPage.classList.remove('hidden')
     formCreatePoster.classList.add('hidden')
   }
-
+//Iteration 1
   function displayMyPoster(){
     event.preventDefault()
     formCreatePoster.classList.add('hidden')
@@ -165,8 +161,6 @@ function openFormPage(){
   }
 // (we've provided one for you to get you started)!
 //function newRandomPoster() {
-
-
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
